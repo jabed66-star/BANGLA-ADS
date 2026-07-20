@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Management - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/website-management.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla</div>
+            <nav class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="website-management.html" class="active">Website Management</a>
+                <a href="earnings.html">Earnings</a>
+                <a href="withdraw.html">Withdraw</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Publisher
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Website Management</h1>
+                    
+                    <div class="header-actions">
+                        <a href="#ad-unit-generator" class="btn btn-success">⚙️ Manage Ad Units</a>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h2>Add New Website</h2>
+                        <form id="add-site-form">
+                            <div class="form-group">
+                                <label for="site-url">Website Domain URL</label>
+                                <input type="url" id="site-url" placeholder="https://example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="site-category">Category</label>
+                                <select id="site-category">
+                                    <option value="tech">Technology / Blog</option>
+                                    <option value="news">News / Media</option>
+                                    <option value="entertainment">Entertainment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Site for Approval</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h2>Domain Verification</h2>
+                        <p style="font-size: 14px; color: #64748b; margin-bottom: 10px;">
+                            Add the following Meta Tag inside the <code>&lt;head&gt;</code> section of your website to verify ownership.
+                        </p>
+                        <div class="code-box">&lt;meta name="ads-bangla-verification" content="AB-84930219" /&gt;</div>
+                        <button class="btn btn-secondary" style="margin-top: 10px;">Verify Domain</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Your Registered Websites</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Added Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>techbangla.com</td>
+                                    <td>2026-07-15</td>
+                                    <td><span class="badge badge-approved">Approved</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 5px 10px; font-size: 12px;">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>bdnewsportal.com</td>
+                                    <td>2026-07-20</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 5px 10px; font-size: 12px;" disabled>Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>myblogsite.net</td>
+                                    <td>2026-07-01</td>
+                                    <td><span class="badge badge-rejected">Rejected</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 5px 10px; font-size: 12px;">Re-apply</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card" id="ad-unit-generator">
+                    <h2>Ad Units Manager (Code Generator)</h2>
+                    
+                    <form id="ad-unit-form">
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="select-website">Select Approved Website</label>
+                                <select id="select-website">
+                                    <option value="techbangla.com">techbangla.com</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ad-name">Ad Unit Name</label>
+                                <input type="text" id="ad-name" placeholder="e.g. Header Banner 1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ad-type">Ad Type</label>
+                                <select id="ad-type">
+                                    <option value="banner">Banner Ads</option>
+                                    <option value="native">Native Ads</option>
+                                    <option value="popunder">Popunder</option>
+                                    <option value="interstitial">Interstitial</option>
+                                    <option value="video">Video Ads</option>
+                                    <option value="sticky">Sticky Ads</option>
+                                    <option value="infeed">In-feed Ads</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ad-size">Select Ad Size</label>
+                                <select id="ad-size">
+                                    <option value="300x250">300 x 250 (Medium Rectangle)</option>
+                                    <option value="728x90">728 x 90 (Leaderboard)</option>
+                                    <option value="160x600">160 x 600 (Wide Skyscraper)</option>
+                                    <option value="320x50">320 x 50 (Mobile Banner)</option>
+                                    <option value="responsive">Responsive (Auto Adjust)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" id="generate-code-btn" class="btn btn-primary">Generate Code</button>
+                    </form>
+
+                    <div style="margin-top: 20px;">
+                        <label style="font-weight: 500;">Generated Ad Code:</label>
+                        <div class="code-box" id="ad-code-output">&lt;!-- Ads Bangla Ad Unit --&gt;
+&lt;script src="https://adsbangla.com/sdk/v1/ad.js" data-ad-client="AB-PUB-98231" data-ad-slot="300250" async&gt;&lt;/script&gt;
+&lt;ins class="adsbangla" style="display:inline-block;width:300px;height:250px"&gt;&lt;/ins&gt;</div>
+                        <button type="button" id="copy-code-btn" class="btn btn-success" style="margin-top: 10px;">Copy Code Button</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/website-management.js"></script>
+</body>
+                                  </html>
