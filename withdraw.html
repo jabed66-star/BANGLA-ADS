@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/withdraw.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla</div>
+            <nav class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="website-management.html">Website Management</a>
+                <a href="earnings.html">Earnings</a>
+                <a href="withdraw.html" class="active">Withdraw</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Publisher
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Withdraw Funds</h1>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h2>Available Balance</h2>
+                        <h1 style="font-size: 36px; color: #10b981; margin: 10px 0;">$330.00</h1>
+                        
+                        <div class="alert-info">
+                            <strong>Minimum Withdraw Limit:</strong> $10.00
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Withdraw Request</h2>
+                        <form id="withdraw-form">
+                            <div class="form-group">
+                                <label for="withdraw-amount">Amount ($)</label>
+                                <input type="number" id="withdraw-amount" min="10" step="0.01" placeholder="Enter amount (Min $10)" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="payment-method">Payment Method</label>
+                                <select id="payment-method" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="bkash">Mobile Banking (bKash)</option>
+                                    <option value="binance">Binance ID</option>
+                                    <option value="usdt">USDT BEP20</option>
+                                </select>
+                            </div>
+
+                            <div id="bkash-field" class="form-group payment-fields">
+                                <label for="bkash-number">bKash Personal Number</label>
+                                <input type="text" id="bkash-number" placeholder="017XXXXXXXX">
+                            </div>
+
+                            <div id="binance-field" class="form-group payment-fields">
+                                <label for="binance-id">Binance Pay ID / User ID</label>
+                                <input type="text" id="binance-id" placeholder="e.g. 238491029">
+                            </div>
+
+                            <div id="usdt-field" class="form-group payment-fields">
+                                <label for="usdt-address">USDT BEP20 Wallet Address</label>
+                                <input type="text" id="usdt-address" placeholder="0x...">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit Withdraw Request</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Payment History</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Date</th>
+                                    <th>Method</th>
+                                    <th>Account Details</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#WD-8021</td>
+                                    <td>2026-07-10</td>
+                                    <td>bKash</td>
+                                    <td>01712345678</td>
+                                    <td>$150.00</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#WD-7410</td>
+                                    <td>2026-06-25</td>
+                                    <td>Binance ID</td>
+                                    <td>238491029</td>
+                                    <td>$200.00</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#WD-9102</td>
+                                    <td>2026-07-20</td>
+                                    <td>USDT BEP20</td>
+                                    <td>0x8F3...9A12</td>
+                                    <td>$50.00</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/withdraw.js"></script>
+</body>
+</html>
