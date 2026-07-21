@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/settings.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html" class="active">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>System Platform Settings</h1>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="general-settings">General & Rates</button>
+                    <button class="tab-btn" data-tab="payment-gateways">Payment Gateways</button>
+                    <button class="tab-btn" data-tab="email-smtp">Email / SMTP</button>
+                    <button class="tab-btn" data-tab="api-keys">API Keys</button>
+                </div>
+
+                <div id="general-settings" class="tab-content active">
+                    <div class="card">
+                        <h2>Limits & Default Rates</h2>
+                        <form>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="min-withdraw">Minimum Withdraw Limit ($)</label>
+                                    <input type="number" id="min-withdraw" value="10.00" step="0.5" required>
+                                    <small>পাবলিশারদের জন্য সর্বনিম্ন উত্তোলন সীমা।</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="min-deposit">Minimum Deposit Limit ($)</label>
+                                    <input type="number" id="min-deposit" value="20.00" step="1" required>
+                                    <small>বিজ্ঞাপনদাতাদের জন্য সর্বনিম্ন ডিপোজিট সীমা।</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cpc-rate">Default Base CPC Rate ($)</label>
+                                    <input type="number" id="cpc-rate" value="0.02" step="0.001" required>
+                                    <small>প্রতি ক্লিকের জন্য ডিফল্ট চার্জ।</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cpm-rate">Default Base CPM Rate ($)</label>
+                                    <input type="number" id="cpm-rate" value="0.50" step="0.01" required>
+                                    <small>প্রতি ১০০০ ইম্প্রেশনের জন্য ডিফল্ট চার্জ।</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="system-currency">System Currency</label>
+                                    <select id="system-currency">
+                                        <option value="USD" selected>USD ($)</option>
+                                        <option value="BDT">BDT (৳)</option>
+                                    </select>
+                                    <small>প্ল্যাটফর্মের মূল কারেন্সি।</small>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-save">Save General Settings</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="payment-gateways" class="tab-content">
+                    <div class="card">
+                        <h2>Manage Active Payment Gateways</h2>
+                        <form>
+                            <div class="gateway-item">
+                                <div>
+                                    <strong>bKash (Manual / Automated)</strong>
+                                    <br><small style="color:#64748b;">মোবাইল ব্যাংকিং পেমেন্ট পদ্ধতি</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="gateway-item">
+                                <div>
+                                    <strong>Nagad (Manual)</strong>
+                                    <br><small style="color:#64748b;">মোবাইল ব্যাংকিং পেমেন্ট পদ্ধতি</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="gateway-item">
+                                <div>
+                                    <strong>Binance Pay / USDT (BEP20)</strong>
+                                    <br><small style="color:#64748b;">ক্রিপ্টো পেমেন্ট মেথড</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-save">Update Gateways</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="email-smtp" class="tab-content">
+                    <div class="card">
+                        <h2>SMTP Mail Configuration</h2>
+                        <form>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="smtp-host">SMTP Host</label>
+                                    <input type="text" id="smtp-host" value="smtp.mailtrap.io" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="smtp-port">SMTP Port</label>
+                                    <input type="number" id="smtp-port" value="587" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="smtp-user">SMTP Username</label>
+                                    <input type="text" id="smtp-user" value="admin@adsbangla.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="smtp-pass">SMTP Password</label>
+                                    <input type="password" id="smtp-pass" value="••••••••••••" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="smtp-encryption">Encryption</label>
+                                    <select id="smtp-encryption">
+                                        <option value="tls" selected>TLS</option>
+                                        <option value="ssl">SSL</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-save">Save SMTP Configuration</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="api-keys" class="tab-content">
+                    <div class="card">
+                        <h2>Third-Party API Keys Management</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="ip-api-key">IP Geolocation API Key</label>
+                                <input type="text" id="ip-api-key" value="geo_live_982301849201" placeholder="Enter IP API Key">
+                                <small>কান্ট্রি এবং ফ্রড ট্র্যাকিং সনাক্তকরণের জন্য ব্যবহৃত হবে।</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recaptcha-site">Google reCAPTCHA Site Key</label>
+                                <input type="text" id="recaptcha-site" value="6Ld_xxxxxxxxx_sitekey">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recaptcha-secret">Google reCAPTCHA Secret Key</label>
+                                <input type="password" id="recaptcha-secret" value="••••••••••••••••••••">
+                            </div>
+
+                            <button type="submit" class="btn-save">Save API Keys</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/settings.js"></script>
+</body>
+                                  </html>
