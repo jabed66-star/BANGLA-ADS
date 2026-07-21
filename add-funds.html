@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Funds - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/add-funds.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla</div>
+            <nav class="nav-menu">
+                <a href="advertiser-dashboard.html">Dashboard</a>
+                <a href="add-funds.html" class="active">Add Funds</a>
+                <a href="campaign-management.html">Campaign Management</a>
+                <a href="advertiser-reports.html">Reports</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Advertiser
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Add Funds</h1>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card balance-card">
+                        <h2>Current Balance</h2>
+                        <h1>$500.00</h1>
+                        <p style="color: #64748b; font-size: 14px;">Deposit funds to run your advertising campaigns smoothly.</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Deposit Request</h2>
+                        <form id="deposit-form">
+                            <div class="form-group">
+                                <label for="deposit-amount">Amount ($ USD)</label>
+                                <input type="number" id="deposit-amount" min="5" step="0.01" placeholder="Enter amount (e.g. 50)" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="payment-gateway">Payment Method</label>
+                                <select id="payment-gateway" required>
+                                    <option value="">Select Gateway</option>
+                                    <option value="binance">Binance Pay / UID</option>
+                                    <option value="usdt">USDT (BEP20)</option>
+                                    <option value="bkash">bKash Personal</option>
+                                </select>
+                            </div>
+
+                            <div id="binance-info" class="payment-details-box">
+                                <label>Send Payment to Binance UID:</label>
+                                <div class="payment-info-row">
+                                    <span id="binance-uid">1213506002</span>
+                                    <button type="button" class="btn-copy" onclick="copyText('binance-uid', this)">Copy</button>
+                                </div>
+                            </div>
+
+                            <div id="usdt-info" class="payment-details-box">
+                                <label>Send Payment to USDT (BEP20) Address:</label>
+                                <div class="payment-info-row">
+                                    <span id="usdt-addr">0xacff730a20198be8dfe3bfcf013a0cd79ab89d1e</span>
+                                    <button type="button" class="btn-copy" onclick="copyText('usdt-addr', this)">Copy</button>
+                                </div>
+                            </div>
+
+                            <div id="bkash-info" class="payment-details-box">
+                                <label>Send Money to bKash Personal Number:</label>
+                                <div class="payment-info-row">
+                                    <span id="bkash-num">01950371011</span>
+                                    <button type="button" class="btn-copy" onclick="copyText('bkash-num', this)">Copy</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="trx-id">Transaction ID / Proof</label>
+                                <input type="text" id="trx-id" placeholder="Enter TrxID or Payment Reference" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit Deposit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Deposit History</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Method</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TRX98210398</td>
+                                    <td>bKash</td>
+                                    <td>$50.00</td>
+                                    <td>2026-07-18</td>
+                                    <td><span class="badge badge-success">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>0x3a2f...819c</td>
+                                    <td>USDT (BEP20)</td>
+                                    <td>$200.00</td>
+                                    <td>2026-07-10</td>
+                                    <td><span class="badge badge-success">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>BN19203810</td>
+                                    <td>Binance UID</td>
+                                    <td>$100.00</td>
+                                    <td>2026-07-21</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/add-funds.js"></script>
+</body>
+  </html>
