@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/reports.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="reports.html" class="active">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>System Analytics & Reports</h1>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="revenue-report">Revenue Report</button>
+                    <button class="tab-btn" data-tab="publisher-report">Publisher Report</button>
+                    <button class="tab-btn" data-tab="advertiser-report">Advertiser Report</button>
+                    <button class="tab-btn" data-tab="country-report">Country Report</button>
+                </div>
+
+                <div id="revenue-report" class="tab-content active">
+                    <div class="card">
+                        <h2>Overall Revenue Breakdown</h2>
+                        <form class="report-filter-form filter-bar">
+                            <label>From:</label>
+                            <input type="date" value="2026-07-01">
+                            <label>To:</label>
+                            <input type="date" value="2026-07-21">
+                            <button type="submit" class="btn-filter">Filter</button>
+                        </form>
+
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Total Impressions</th>
+                                        <th>Total Clicks</th>
+                                        <th>Gross Revenue</th>
+                                        <th>Publisher Payout</th>
+                                        <th>Admin Profit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2026-07-21</td>
+                                        <td>150,200</td>
+                                        <td>4,320</td>
+                                        <td>$450.00</td>
+                                        <td>$360.00</td>
+                                        <td><span class="stat-badge" style="color:#059669;">+$90.00</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-07-20</td>
+                                        <td>142,000</td>
+                                        <td>3,980</td>
+                                        <td>$410.00</td>
+                                        <td>$328.00</td>
+                                        <td><span class="stat-badge" style="color:#059669;">+$82.00</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="publisher-report" class="tab-content">
+                    <div class="card">
+                        <h2>Top Publisher Performance</h2>
+                        <form class="report-filter-form filter-bar">
+                            <input type="text" placeholder="Search Publisher Name...">
+                            <button type="submit" class="btn-filter">Search</button>
+                        </form>
+
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Publisher Name</th>
+                                        <th>Approved Websites</th>
+                                        <th>Impressions</th>
+                                        <th>Clicks</th>
+                                        <th>eCPM</th>
+                                        <th>Total Earnings</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Rahim Ahmed</td>
+                                        <td>3 Sites</td>
+                                        <td>85,000</td>
+                                        <td>2,100</td>
+                                        <td>$1.20</td>
+                                        <td><strong>$102.00</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tech World BD</td>
+                                        <td>1 Site</td>
+                                        <td>42,000</td>
+                                        <td>1,150</td>
+                                        <td>$1.10</td>
+                                        <td><strong>$46.20</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advertiser-report" class="tab-content">
+                    <div class="card">
+                        <h2>Advertiser Campaign Performance</h2>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Advertiser</th>
+                                        <th>Active Campaigns</th>
+                                        <th>Impressions Delivered</th>
+                                        <th>Clicks Received</th>
+                                        <th>CTR (%)</th>
+                                        <th>Total Spent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Karim Enterprise</td>
+                                        <td>2 Active</td>
+                                        <td>120,000</td>
+                                        <td>3,100</td>
+                                        <td>2.58%</td>
+                                        <td><strong>$310.00</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Promo Agency</td>
+                                        <td>1 Active</td>
+                                        <td>65,000</td>
+                                        <td>1,400</td>
+                                        <td>2.15%</td>
+                                        <td><strong>$140.00</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="country-report" class="tab-content">
+                    <div class="card">
+                        <h2>Traffic & Revenue by Country</h2>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Country</th>
+                                        <th>Impressions</th>
+                                        <th>Clicks</th>
+                                        <th>Average CPC/CPM</th>
+                                        <th>Total Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>🇧🇩 Bangladesh</td>
+                                        <td>210,000</td>
+                                        <td>6,200</td>
+                                        <td>$0.03 CPC</td>
+                                        <td>$186.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🇺🇸 United States</td>
+                                        <td>15,000</td>
+                                        <td>450</td>
+                                        <td>$2.50 CPM</td>
+                                        <td>$112.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🇮🇳 India</td>
+                                        <td>45,000</td>
+                                        <td>1,100</td>
+                                        <td>$0.02 CPC</td>
+                                        <td>$22.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/reports.js"></script>
+</body>
+  </html>
