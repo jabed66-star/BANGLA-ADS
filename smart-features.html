@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Features - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/smart-features.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="smart-features.html" class="active">Smart Features</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Smart & Automated Features</h1>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="automation-ai">Automation & AI</button>
+                    <button class="tab-btn" data-tab="ad-optimization">Ad Optimization & Targeting</button>
+                    <button class="tab-btn" data-tab="monetization-marketing">Referral & Promo Code</button>
+                    <button class="tab-btn" data-tab="notifications">Notifications System</button>
+                </div>
+
+                <div id="automation-ai" class="tab-content active">
+                    <div class="card">
+                        <h2>AI & Automated Approvals</h2>
+                        <form>
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>AI Fraud Detection Engine</label>
+                                    <small>Uses machine learning algorithms to auto-detect suspicious bot clicks and proxy traffic.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Auto Website Approval Rules</label>
+                                    <small>Automatically approves websites matching domain age and Traffic verification rules.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Auto Campaign Approval</label>
+                                    <small>Instantly approves advertiser campaigns if no blacklisted keywords or links are detected.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Automation Settings</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="ad-optimization" class="tab-content">
+                    <div class="card">
+                        <h2>Real-Time Delivery & Targeting Features</h2>
+                        <form>
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Real-Time Analytics Processing</label>
+                                    <small>Streams live click/impression metrics without page refresh.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Live Earnings Updates</label>
+                                    <small>Calculates publisher earnings instantaneously after click validation.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Global CDN Support</label>
+                                    <small>Serves ad banners via CDN for ultra-fast load speed.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Lazy Loading Ads</label>
+                                    <small>Delays ad script execution until user scrolls to the ad placement.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Auto Ad Refresh</label>
+                                    <small>Refreshes ad banners after a set interval on active user screens.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Geo & Device Targeting Filters</label>
+                                    <small>Allows advertisers to target specific countries, OS, and device types.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Frequency Capping</label>
+                                    <small>Limits maximum impressions shown to a single unique visitor per day.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>A/B Testing for Ad Units</label>
+                                    <small>Automatically tests different creative banners to optimize CTR.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Optimization Rules</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="monetization-marketing" class="tab-content">
+                    <div class="card">
+                        <h2>Referral & Promotion Systems</h2>
+                        <form>
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Publisher Referral Program</label>
+                                    <small>Give bonus commission to publishers for inviting new publishers.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Advertiser Referral Program</label>
+                                    <small>Reward deposit bonuses when referred advertisers add funds.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Promo Code System</label>
+                                    <small>Allow advertisers to redeem discount promo codes during deposit.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Publisher Referral Bonus (%)</label>
+                                    <input type="number" value="5" min="1" max="50">
+                                </div>
+                                <div class="form-group">
+                                    <label>Advertiser Referral Bonus ($)</label>
+                                    <input type="number" value="10" min="1">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Referral Settings</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="notifications" class="tab-content">
+                    <div class="card">
+                        <h2>System & Email Alerts</h2>
+                        <form>
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Real-Time System Notifications</label>
+                                    <small>Push in-app alerts for pending approvals, tickets, and transactions.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-info">
+                                    <label>Automated Email Notifications</label>
+                                    <small>Send transactional emails for deposit success, withdraw updates, and new notices.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Notification Rules</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/smart-features.js"></script>
+</body>
+                              </html>
