@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings Management - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/earnings-management.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html" class="active">Earnings Management</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Earnings & Revenue Management</h1>
+                </div>
+
+                <div class="earnings-grid">
+                    
+                    <div class="card">
+                        <h2>Global Revenue Share (%)</h2>
+                        <form id="earnings-settings-form">
+                            <div class="form-group">
+                                <label for="rev-share">Admin Revenue Share (%)</label>
+                                <input type="number" id="rev-share" value="20" min="0" max="100" step="0.5" required>
+                                <small>প্লাটফর্মের লাভ হিসেবে এডমিন পাবে।</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pub-commission">Publisher Commission (%)</label>
+                                <input type="number" id="pub-commission" value="80" readonly style="background-color: #f8fafc;">
+                                <small>বিজ্ঞাপনের আয়ের এই অংশটুকু পাবলিশারকে দেওয়া হবে।</small>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Settings</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h2>Advertiser Base Cost Setup</h2>
+                        <form onsubmit="event.preventDefault(); alert('Advertiser Cost Updated!');">
+                            <div class="form-group">
+                                <label for="min-cpm">Minimum CPM Cost ($)</label>
+                                <input type="number" id="min-cpm" value="0.50" step="0.01" required>
+                                <small>প্রতি ১০০০ ইম্প্রেশনের সর্বনিম্ন চার্জ।</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="min-cpc">Minimum CPC Cost ($)</label>
+                                <input type="number" id="min-cpc" value="0.02" step="0.01" required>
+                                <small>প্রতি ক্লিকের সর্বনিম্ন চার্জ।</small>
+                            </div>
+
+                            <button type="submit" class="btn-save">Update Cost Rates</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <h2>Live Earnings Breakdown Overview</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ad Format</th>
+                                    <th>Advertiser Cost (Avg)</th>
+                                    <th>Admin Share (20%)</th>
+                                    <th>Publisher Share (80%)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Banner Ads (CPC)</strong></td>
+                                    <td>$0.10 / Click</td>
+                                    <td><span class="badge-calc">$0.02</span></td>
+                                    <td><span class="badge-calc">$0.08</span></td>
+                                    <td style="color: #10b981; font-weight:600;">Active</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Popunder Ads (CPM)</strong></td>
+                                    <td>$1.50 / 1k Imp</td>
+                                    <td><span class="badge-calc">$0.30</span></td>
+                                    <td><span class="badge-calc">$1.20</span></td>
+                                    <td style="color: #10b981; font-weight:600;">Active</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Native Ads (CPC)</strong></td>
+                                    <td>$0.05 / Click</td>
+                                    <td><span class="badge-calc">$0.01</span></td>
+                                    <td><span class="badge-calc">$0.04</span></td>
+                                    <td style="color: #10b981; font-weight:600;">Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/earnings-management.js"></script>
+</body>
+  </html>
