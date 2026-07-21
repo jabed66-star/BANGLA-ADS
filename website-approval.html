@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Approval - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/website-approval.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html" class="active">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Admin
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Website Approval Requests</h1>
+                </div>
+
+                <div class="card">
+                    <h2>Submitted Websites</h2>
+
+                    <div class="filter-bar">
+                        <input type="text" id="site-search" placeholder="ডোমেইন বা পাবলিশারের নাম লিখুন...">
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain & Publisher</th>
+                                    <th>Category</th>
+                                    <th>Verification Code</th>
+                                    <th>Submitted Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="site-table-body">
+                                <tr data-status="pending">
+                                    <td>
+                                        <strong>techbangla.com</strong><br>
+                                        <small style="color:#64748b;">By: Rahim Ahmed</small>
+                                    </td>
+                                    <td>Technology / Blog</td>
+                                    <td><span class="meta-code">AB-84930219</span></td>
+                                    <td>2026-07-20</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <a href="https://techbangla.com" target="_blank" class="btn btn-visit">Visit Site</a>
+                                        <button class="btn btn-approve" onclick="updateSiteStatus(this, 'approved')">Approve</button>
+                                        <button class="btn btn-reject" onclick="updateSiteStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr data-status="pending">
+                                    <td>
+                                        <strong>bdnewsportal.com</strong><br>
+                                        <small style="color:#64748b;">By: BD News Team</small>
+                                    </td>
+                                    <td>News & Media</td>
+                                    <td><span class="meta-code">AB-99201834</span></td>
+                                    <td>2026-07-21</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <a href="https://bdnewsportal.com" target="_blank" class="btn btn-visit">Visit Site</a>
+                                        <button class="btn btn-approve" onclick="updateSiteStatus(this, 'approved')">Approve</button>
+                                        <button class="btn btn-reject" onclick="updateSiteStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr data-status="approved">
+                                    <td>
+                                        <strong>infotechbd.net</strong><br>
+                                        <small style="color:#64748b;">By: Tanvir Hossain</small>
+                                    </td>
+                                    <td>Education</td>
+                                    <td><span class="meta-code">AB-10293847</span></td>
+                                    <td>2026-07-15</td>
+                                    <td><span class="badge badge-approved">Approved</span></td>
+                                    <td>
+                                        <a href="https://infotechbd.net" target="_blank" class="btn btn-visit">Visit Site</a>
+                                        <button class="btn btn-reject" onclick="updateSiteStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/website-approval.js"></script>
+</body>
+  </html>
