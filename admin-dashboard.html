@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html" class="active">Dashboard</a>
+                <a href="manage-publishers.html">Manage Publishers</a>
+                <a href="manage-advertisers.html">Manage Advertisers</a>
+                <a href="manage-campaigns.html">Manage Campaigns</a>
+                <a href="withdraw-requests.html">Withdraw Requests</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Admin
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Admin Overview</h1>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card revenue">
+                        <h3>Total Revenue</h3>
+                        <p>$15,450.00</p>
+                    </div>
+                    <div class="stat-card today-revenue">
+                        <h3>Today's Revenue</h3>
+                        <p>$340.50</p>
+                    </div>
+                    <div class="stat-card publishers">
+                        <h3>Total Publishers</h3>
+                        <p>1,280</p>
+                    </div>
+                    <div class="stat-card advertisers">
+                        <h3>Total Advertisers</h3>
+                        <p>450</p>
+                    </div>
+                    <div class="stat-card campaigns">
+                        <h3>Total Campaigns</h3>
+                        <p>890</p>
+                    </div>
+                    <div class="stat-card pending-wd">
+                        <h3>Pending Withdraw</h3>
+                        <p>$1,250.00</p>
+                    </div>
+                    <div class="stat-card paid-wd">
+                        <h3>Paid Withdraw</h3>
+                        <p>$12,800.00</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Recent Pending Withdraw Requests</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Publisher Name</th>
+                                    <th>Payment Method</th>
+                                    <th>Account / Address</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#WD-9021</td>
+                                    <td>Rahim Ahmed</td>
+                                    <td>bKash</td>
+                                    <td>01712345678</td>
+                                    <td>$50.00</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#WD-9022</td>
+                                    <td>Tech World BD</td>
+                                    <td>USDT BEP20</td>
+                                    <td>0x7A9...31F2</td>
+                                    <td>$200.00</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#WD-9020</td>
+                                    <td>Tanvir Hossain</td>
+                                    <td>Binance ID</td>
+                                    <td>1213506002</td>
+                                    <td>$120.00</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/admin-dashboard.js"></script>
+</body>
+</html>
