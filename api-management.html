@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Management - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/api-management.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="api-management.html" class="active">API Management</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>API Access & Documentation</h1>
+                </div>
+
+                <div class="card">
+                    <h2>API Credentials Management</h2>
+                    <form id="generate-api-form">
+                        <div class="form-group">
+                            <label>Secret API Key</label>
+                            <input type="text" id="api-key-output" value="ab_live_9a8f7b6c5d4e3f2a1" readonly>
+                        </div>
+                        <button type="submit" class="btn-primary">Generate New Key</button>
+                    </form>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="publisher-api">Publisher API</button>
+                    <button class="tab-btn" data-tab="advertiser-api">Advertiser API</button>
+                    <button class="tab-btn" data-tab="statistics-api">Statistics API</button>
+                    <button class="tab-btn" data-tab="payment-api">Payment API</button>
+                </div>
+
+                <div id="publisher-api" class="tab-content active">
+                    <div class="card">
+                        <h2>Publisher Endpoints</h2>
+                        
+                        <div class="endpoint-box">
+                            <button class="btn-copy" onclick="copyCode(this)">Copy</button>
+                            <div class="endpoint-header">
+                                <span class="method method-get">GET</span>
+                                <span class="endpoint-url">https://api.adsbangla.com/v1/publisher/websites</span>
+                            </div>
+                            <p style="font-size:13px; color:#64748b; margin-bottom:10px;">অনুমোদিত ওয়েবসাইটগুলোর তালিকা পেতে এই এন্ডপয়েন্ট ব্যবহার করুন।</p>
+                            <div class="code-block">
+{
+  "status": "success",
+  "data": [
+    { "id": 1, "domain": "example.com", "status": "approved" }
+  ]
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advertiser-api" class="tab-content">
+                    <div class="card">
+                        <h2>Advertiser Endpoints</h2>
+
+                        <div class="endpoint-box">
+                            <button class="btn-copy" onclick="copyCode(this)">Copy</button>
+                            <div class="endpoint-header">
+                                <span class="method method-post">POST</span>
+                                <span class="endpoint-url">https://api.adsbangla.com/v1/advertiser/campaigns/create</span>
+                            </div>
+                            <p style="font-size:13px; color:#64748b; margin-bottom:10px;">নতুন ক্যাম্পেইন তৈরি করার এন্ডপয়েন্ট।</p>
+                            <div class="code-block">
+{
+  "campaign_name": "Summer Special",
+  "budget": 100.00,
+  "ad_type": "banner"
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="statistics-api" class="tab-content">
+                    <div class="card">
+                        <h2>Statistics Endpoints</h2>
+
+                        <div class="endpoint-box">
+                            <button class="btn-copy" onclick="copyCode(this)">Copy</button>
+                            <div class="endpoint-header">
+                                <span class="method method-get">GET</span>
+                                <span class="endpoint-url">https://api.adsbangla.com/v1/stats/daily</span>
+                            </div>
+                            <p style="font-size:13px; color:#64748b; margin-bottom:10px;">দৈনিক ইম্প্রেশন, ক্লিক এবং আর্নিং রিপোর্ট ডাটা।</p>
+                            <div class="code-block">
+{
+  "date": "2026-07-21",
+  "impressions": 15000,
+  "clicks": 450,
+  "earnings": 12.50
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment-api" class="tab-content">
+                    <div class="card">
+                        <h2>Payment Endpoints</h2>
+
+                        <div class="endpoint-box">
+                            <button class="btn-copy" onclick="copyCode(this)">Copy</button>
+                            <div class="endpoint-header">
+                                <span class="method method-post">POST</span>
+                                <span class="endpoint-url">https://api.adsbangla.com/v1/payment/withdraw/request</span>
+                            </div>
+                            <p style="font-size:13px; color:#64748b; margin-bottom:10px;">উইথড্র রিকুয়েস্ট সাবমিট করার API এন্ডপয়েন্ট।</p>
+                            <div class="code-block">
+{
+  "amount": 50.00,
+  "method": "bkash",
+  "account_no": "01700000000"
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/api-management.js"></script>
+</body>
+                              </html>
