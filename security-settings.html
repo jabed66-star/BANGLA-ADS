@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Settings - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/security-settings.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="security-settings.html" class="active">Security Settings</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Security & Defense Controls</h1>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="web-security">Web & Shield Security</button>
+                    <button class="tab-btn" data-tab="recaptcha-settings">Google reCAPTCHA</button>
+                    <button class="tab-btn" data-tab="user-auth">Auth & Verification</button>
+                    <button class="tab-btn" data-tab="two-factor">Two-Factor Auth (2FA)</button>
+                </div>
+
+                <div id="web-security" class="tab-content active">
+                    <div class="card">
+                        <h2>Application Shields & Protection Protocols</h2>
+                        
+                        <div class="security-item">
+                            <div class="security-info">
+                                <label>SSL (HTTPS Enforcement)</label>
+                                <small>Force HTTPS for all web traffic and secure cookies.</small>
+                            </div>
+                            <span class="badge-active">Active (TLS 1.3)</span>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <label>CSRF Protection (Cross-Site Request Forgery)</label>
+                                <small>Validate CSRF tokens for all form requests & actions.</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <label>XSS Protection (Cross-Site Scripting)</label>
+                                <small>Sanitize user inputs & enable Content Security Policy (CSP).</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="security-info">
+                                <label>SQL Injection Defense</label>
+                                <small>Prepared statements & ORM query escaping filter enabled.</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="recaptcha-settings" class="tab-content">
+                    <div class="card">
+                        <h2>Google reCAPTCHA Protection</h2>
+                        <form>
+                            <div class="security-item" style="padding-top:0;">
+                                <div class="security-info">
+                                    <label>Enable reCAPTCHA on Login/Register</label>
+                                    <small>Prevents automated bot login & sign-up attempts.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group" style="margin-top:15px;">
+                                <label>reCAPTCHA Version</label>
+                                <select>
+                                    <option value="v2">reCAPTCHA v2 (I'm not a robot Checkbox)</option>
+                                    <option value="v3" selected>reCAPTCHA v3 (Invisible Score Based)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>reCAPTCHA Site Key</label>
+                                <input type="text" value="6Ld_a98201938_site_key_example" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>reCAPTCHA Secret Key</label>
+                                <input type="password" value="••••••••••••••••••••••••••••" required>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save reCAPTCHA Settings</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="user-auth" class="tab-content">
+                    <div class="card">
+                        <h2>Email & Phone Authentication</h2>
+                        <form>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <label>Email Verification Requirement</label>
+                                    <small>Require new users to verify email before account activation.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <label>OTP Login (SMS / WhatsApp OTP)</label>
+                                    <small>Allow users to log in using One-Time Password via Mobile SMS.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group" style="margin-top:15px;">
+                                <label>OTP Expire Time (Minutes)</label>
+                                <input type="number" value="5" min="1" max="15">
+                            </div>
+
+                            <button type="submit" class="btn-save">Save Auth Controls</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="two-factor" class="tab-content">
+                    <div class="card">
+                        <h2>Two-Factor Authentication (2FA) Policies</h2>
+                        <form>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <label>Mandatory 2FA for Admin Panel</label>
+                                    <small>Require Authenticator App (Google Auth / Authy) for Admin accounts.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <label>Optional 2FA for Publishers & Advertisers</label>
+                                    <small>Allow users to enable 2FA on their profiles for security.</small>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-save">Save 2FA Policies</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/security-settings.js"></script>
+</body>
+                  </html>
