@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/fraud-detection.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="fraud-detection.html" class="active">Fraud Detection</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Fraud & Security Control Center</h1>
+                </div>
+
+                <div class="fraud-grid">
+                    
+                    <div class="card">
+                        <h2>Detection Modules</h2>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Invalid Click Detection</label>
+                                <small>অস্বাভাবিক বা ফেক ক্লিক অটো ফিল্টার করবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Bot Detection</label>
+                                <small>স্বয়ংক্রিয় বোট ও স্ক্রিপ্ট ট্রাফিক ব্লক করবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>VPN Detection</label>
+                                <small>VPN ট্রাফিক সনাক্ত ও ফিল্টার করবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Proxy Detection</label>
+                                <small>প্রক্সি আইপি ব্যবহারকারীদের ট্র্যাক করবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Duplicate Click Block</label>
+                                <small>একই ব্যবহারকারীর বারবার ক্লিক আটকাবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Device Fingerprint Validation</label>
+                                <small>ইউনিক ডিভাইস আইডি অনুযায়ী ফিল্টার করবে</small>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card" style="margin-bottom: 20px;">
+                            <h2>Click Limit Rules</h2>
+                            <form id="fraud-limits-form">
+                                <div class="form-group">
+                                    <label>Max Clicks Per IP / Hour</label>
+                                    <input type="number" value="3" min="1" max="50" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Duplicate Click Delay (Seconds)</label>
+                                    <input type="number" value="60" min="5" required>
+                                </div>
+                                <button type="submit" class="btn-danger">Save Rules</button>
+                            </form>
+                        </div>
+
+                        <div class="card">
+                            <h2>IP Block Management</h2>
+                            <form id="ip-block-form">
+                                <div class="form-group">
+                                    <label>Block New IP Address</label>
+                                    <div class="form-inline">
+                                        <input type="text" id="block-ip-input" placeholder="e.g. 192.168.1.1" required>
+                                        <button type="submit" class="btn-danger">Block</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <h2>Blocked IPs & Fingerprints Log</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>IP / Fingerprint Hash</th>
+                                    <th>Reason</th>
+                                    <th>Date Blocked</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blocked-ip-tbody">
+                                <tr>
+                                    <td><code>103.205.132.45</code></td>
+                                    <td>VPN / Proxy Detected</td>
+                                    <td>2026-07-21</td>
+                                    <td><span class="badge-blocked">Blocked</span></td>
+                                    <td><button class="btn-danger" style="padding: 4px 8px; font-size:12px;" onclick="this.closest('tr').remove()">Unblock</button></td>
+                                </tr>
+                                <tr>
+                                    <td><code>FP-892301984021</code></td>
+                                    <td>Invalid Duplicate Clicks</td>
+                                    <td>2026-07-20</td>
+                                    <td><span class="badge-blocked">Blocked</span></td>
+                                    <td><button class="btn-danger" style="padding: 4px 8px; font-size:12px;" onclick="this.closest('tr').remove()">Unblock</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/fraud-detection.js"></script>
+</body>
+</html>
