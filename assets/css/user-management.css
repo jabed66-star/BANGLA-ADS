@@ -1,0 +1,112 @@
+/* assets/css/user-management.css */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+/* Filter Controls */
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-bar input, 
+.filter-bar select {
+    padding: 9px 12px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.filter-bar input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Action Buttons */
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    transition: background-color 0.2s ease;
+    margin-right: 4px;
+}
+
+.btn-approve { background-color: #10b981; color: white; }
+.btn-approve:hover { background-color: #059669; }
+
+.btn-suspend { background-color: #f59e0b; color: white; }
+.btn-suspend:hover { background-color: #d97706; }
+
+.btn-ban { background-color: #ef4444; color: white; }
+.btn-ban:hover { background-color: #dc2626; }
+
+.btn-unban { background-color: #6366f1; color: white; }
+.btn-unban:hover { background-color: #4f46e5; }
+
+/* Table Styling */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-size: 14px;
+}
+
+table td {
+    font-size: 14px;
+    color: #334155;
+}
+
+/* Role & Status Badges */
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-publisher { background-color: #f3e8ff; color: #7e22ce; }
+.badge-advertiser { background-color: #fce7f3; color: #be185d; }
+
+.badge-approved { background-color: #d1fae5; color: #059669; }
+.badge-pending { background-color: #fef3c7; color: #d97706; }
+.badge-suspended { background-color: #ffedd5; color: #c2410c; }
+.badge-banned { background-color: #fee2e2; color: #dc2626; }
