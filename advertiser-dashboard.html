@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertiser Dashboard - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/advertiser-dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla</div>
+            <nav class="nav-menu">
+                <a href="advertiser-dashboard.html" class="active">Dashboard</a>
+                <a href="add-funds.html">Add Funds</a>
+                <a href="campaign-management.html">Campaign Management</a>
+                <a href="advertiser-reports.html">Reports</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Advertiser
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Advertiser Overview</h1>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card balance">
+                        <h3>Balance</h3>
+                        <p>$500.00</p>
+                    </div>
+                    <div class="stat-card running">
+                        <h3>Running Campaign</h3>
+                        <p>3</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Clicks</h3>
+                        <p>12,450</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Impressions</h3>
+                        <p>450,200</p>
+                    </div>
+                    <div class="stat-card spent">
+                        <h3>Spent Amount</h3>
+                        <p>$245.80</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Active Campaigns Overview</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Type</th>
+                                    <th>Impressions</th>
+                                    <th>Clicks</th>
+                                    <th>Spent</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Summer Sale Promo</td>
+                                    <td>Banner Ads</td>
+                                    <td>180,000</td>
+                                    <td>5,200</td>
+                                    <td>$98.00</td>
+                                    <td><span class="badge badge-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>App Download Push</td>
+                                    <td>Popunder</td>
+                                    <td>210,000</td>
+                                    <td>4,800</td>
+                                    <td>$105.00</td>
+                                    <td><span class="badge badge-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>E-commerce Brand Awareness</td>
+                                    <td>Native Ads</td>
+                                    <td>60,200</td>
+                                    <td>2,450</td>
+                                    <td>$42.80</td>
+                                    <td><span class="badge badge-active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/advertiser-dashboard.js"></script>
+</body>
+</html>
