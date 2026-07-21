@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Logs - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/logs.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="logs.html" class="active">System Logs</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>System Activity & Audit Logs</h1>
+                </div>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="login-logs">Login Logs</button>
+                    <button class="tab-btn" data-tab="activity-logs">Activity Logs</button>
+                    <button class="tab-btn" data-tab="payment-logs">Payment Logs</button>
+                </div>
+
+                <div id="login-logs" class="tab-content active">
+                    <div class="card">
+                        <h2>User Login History</h2>
+                        <div class="filter-bar">
+                            <input type="text" class="log-search" placeholder="আইপি বা ইউজার ইমেইল দিয়ে খুঁজুন...">
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User Email</th>
+                                        <th>Role</th>
+                                        <th>IP Address</th>
+                                        <th>Browser / Device</th>
+                                        <th>Status</th>
+                                        <th>Date & Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>rahim@gmail.com</td>
+                                        <td>Publisher</td>
+                                        <td><span class="ip-code">103.205.132.45</span></td>
+                                        <td>Chrome / Android</td>
+                                        <td><span class="badge badge-success">Successful</span></td>
+                                        <td>2026-07-21 14:23:10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>karim_enterprise@yahoo.com</td>
+                                        <td>Advertiser</td>
+                                        <td><span class="ip-code">180.211.175.12</span></td>
+                                        <td>Firefox / Windows</td>
+                                        <td><span class="badge badge-danger">Failed (Wrong Pass)</span></td>
+                                        <td>2026-07-21 13:10:05</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="activity-logs" class="tab-content">
+                    <div class="card">
+                        <h2>User & Admin Actions Audit</h2>
+                        <div class="filter-bar">
+                            <input type="text" class="log-search" placeholder="অ্যাকশন বা ইউজারের নাম দিয়ে খুঁজুন...">
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>User / Admin</th>
+                                        <th>Action Taken</th>
+                                        <th>Details</th>
+                                        <th>IP Address</th>
+                                        <th>Date & Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Admin (System)</td>
+                                        <td>Website Approved</td>
+                                        <td>Approved domain: <code>techbangla.com</code></td>
+                                        <td><span class="ip-code">103.100.12.1</span></td>
+                                        <td>2026-07-21 15:00:22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Karim Enterprise</td>
+                                        <td>Campaign Created</td>
+                                        <td>New Campaign ID: #CMP-99201</td>
+                                        <td><span class="ip-code">180.211.175.12</span></td>
+                                        <td>2026-07-20 18:45:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment-logs" class="tab-content">
+                    <div class="card">
+                        <h2>Gateway & Payout Audit Trail</h2>
+                        <div class="filter-bar">
+                            <input type="text" class="log-search" placeholder="ট্রানজেকশন আইডি বা মেথড দিয়ে খুঁজুন...">
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>User</th>
+                                        <th>Type</th>
+                                        <th>Gateway</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date & Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>TRX-9820193</code></td>
+                                        <td>Karim Enterprise</td>
+                                        <td><span class="badge badge-info">Deposit</span></td>
+                                        <td>bKash API</td>
+                                        <td>$100.00</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td>2026-07-21 12:05:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>TRX-8810293</code></td>
+                                        <td>Rahim Ahmed</td>
+                                        <td><span class="badge badge-warning">Withdraw</span></td>
+                                        <td>Nagad Manual</td>
+                                        <td>$50.00</td>
+                                        <td><span class="badge badge-success">Processed</span></td>
+                                        <td>2026-07-20 16:30:15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/logs.js"></script>
+</body>
+</html>
