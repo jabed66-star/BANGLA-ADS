@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Ads Bangla Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/user-management.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html" class="active">User Management</a>
+                <a href="manage-campaigns.html">Manage Campaigns</a>
+                <a href="withdraw-requests.html">Withdraw Requests</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Admin
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>User Management</h1>
+                </div>
+
+                <div class="card">
+                    <h2>All Publishers & Advertisers</h2>
+
+                    <div class="filter-bar">
+                        <input type="text" id="user-search" placeholder="Search by name or email...">
+                        <select id="role-filter">
+                            <option value="all">All Roles</option>
+                            <option value="publisher">Publisher</option>
+                            <option value="advertiser">Advertiser</option>
+                        </select>
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="suspended">Suspended</option>
+                            <option value="banned">Banned</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User Info</th>
+                                    <th>Role</th>
+                                    <th>Joined Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-table-body">
+                                <tr data-role="publisher" data-status="pending">
+                                    <td>
+                                        <strong>Rahim Ahmed</strong><br>
+                                        <small style="color:#64748b;">rahim@techbangla.com</small>
+                                    </td>
+                                    <td><span class="badge badge-publisher">Publisher</span></td>
+                                    <td>2026-07-20</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-approve" onclick="changeUserStatus(this, 'approved')">Approve</button>
+                                        <button class="btn btn-suspend" onclick="changeUserStatus(this, 'suspended')">Suspend</button>
+                                        <button class="btn btn-ban" onclick="changeUserStatus(this, 'banned')">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr data-role="advertiser" data-status="pending">
+                                    <td>
+                                        <strong>Karim Enterprise</strong><br>
+                                        <small style="color:#64748b;">contact@karim.com</small>
+                                    </td>
+                                    <td><span class="badge badge-advertiser">Advertiser</span></td>
+                                    <td>2026-07-19</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-approve" onclick="changeUserStatus(this, 'approved')">Approve</button>
+                                        <button class="btn btn-suspend" onclick="changeUserStatus(this, 'suspended')">Suspend</button>
+                                        <button class="btn btn-ban" onclick="changeUserStatus(this, 'banned')">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr data-role="publisher" data-status="approved">
+                                    <td>
+                                        <strong>BD News Portal</strong><br>
+                                        <small style="color:#64748b;">admin@bdnews.com</small>
+                                    </td>
+                                    <td><span class="badge badge-publisher">Publisher</span></td>
+                                    <td>2026-06-15</td>
+                                    <td><span class="badge badge-approved">Approved</span></td>
+                                    <td>
+                                        <button class="btn btn-suspend" onclick="changeUserStatus(this, 'suspended')">Suspend</button>
+                                        <button class="btn btn-ban" onclick="changeUserStatus(this, 'banned')">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr data-role="advertiser" data-status="suspended">
+                                    <td>
+                                        <strong>Promo Agency</strong><br>
+                                        <small style="color:#64748b;">info@promoagency.net</small>
+                                    </td>
+                                    <td><span class="badge badge-advertiser">Advertiser</span></td>
+                                    <td>2026-05-10</td>
+                                    <td><span class="badge badge-suspended">Suspended</span></td>
+                                    <td>
+                                        <button class="btn btn-approve" onclick="changeUserStatus(this, 'approved')">Unsuspend</button>
+                                        <button class="btn btn-ban" onclick="changeUserStatus(this, 'banned')">Ban</button>
+                                    </td>
+                                </tr>
+                                <tr data-role="publisher" data-status="banned">
+                                    <td>
+                                        <strong>Spam Blog Site</strong><br>
+                                        <small style="color:#64748b;">user@spamblog.org</small>
+                                    </td>
+                                    <td><span class="badge badge-publisher">Publisher</span></td>
+                                    <td>2026-04-01</td>
+                                    <td><span class="badge badge-banned">Banned</span></td>
+                                    <td>
+                                        <button class="btn btn-unban" onclick="changeUserStatus(this, 'approved')">Unban</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/user-management.js"></script>
+</body>
+                                                </html>
