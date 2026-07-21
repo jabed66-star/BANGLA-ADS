@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Approval - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/campaign-approval.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html" class="active">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Campaign Approval Requests</h1>
+                </div>
+
+                <div class="card">
+                    <h2>Pending & Reviewed Campaigns</h2>
+
+                    <div class="filter-bar">
+                        <input type="text" id="campaign-search" placeholder="বিজ্ঞাপন বা বিজ্ঞাপনদাতার নাম লিখুন...">
+                        <select id="status-filter">
+                            <option value="all">All Status</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="active">Active</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Campaign & Advertiser</th>
+                                    <th>Ad Type</th>
+                                    <th>Budget / Bid</th>
+                                    <th>Targeting</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="campaign-table-body">
+                                <tr data-status="pending">
+                                    <td>
+                                        <strong>App Download Push</strong><br>
+                                        <small style="color:#64748b;">By: Karim Enterprise</small>
+                                    </td>
+                                    <td>Video Ads</td>
+                                    <td>
+                                        Total: $200.00<br>
+                                        <small style="color:#64748b;">CPM ($0.85)</small>
+                                    </td>
+                                    <td>BD, Mobile, Android</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-preview">Preview</a>
+                                        <button class="btn btn-approve" onclick="updateCampaignStatus(this, 'active')">Approve</button>
+                                        <button class="btn btn-reject" onclick="updateCampaignStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr data-status="pending">
+                                    <td>
+                                        <strong>Summer Fashion Sale</strong><br>
+                                        <small style="color:#64748b;">By: Promo Agency</small>
+                                    </td>
+                                    <td>Banner Ads (728x90)</td>
+                                    <td>
+                                        Total: $50.00<br>
+                                        <small style="color:#64748b;">CPC ($0.04)</small>
+                                    </td>
+                                    <td>All Countries, Desktop</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-preview">Preview</a>
+                                        <button class="btn btn-approve" onclick="updateCampaignStatus(this, 'active')">Approve</button>
+                                        <button class="btn btn-reject" onclick="updateCampaignStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr data-status="active">
+                                    <td>
+                                        <strong>Mega Discount Offer</strong><br>
+                                        <small style="color:#64748b;">By: Tanvir Marketing</small>
+                                    </td>
+                                    <td>Native Ads</td>
+                                    <td>
+                                        Total: $300.00<br>
+                                        <small style="color:#64748b;">CPC ($0.03)</small>
+                                    </td>
+                                    <td>BD, IN, Mobile</td>
+                                    <td><span class="badge badge-active">Active</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-preview">Preview</a>
+                                        <button class="btn btn-reject" onclick="updateCampaignStatus(this, 'rejected')">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/campaign-approval.js"></script>
+</body>
+  </html>
