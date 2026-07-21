@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Management - Ads Bangla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/campaign-management.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla</div>
+            <nav class="nav-menu">
+                <a href="advertiser-dashboard.html">Dashboard</a>
+                <a href="add-funds.html">Add Funds</a>
+                <a href="campaign-management.html" class="active">Campaign Management</a>
+                <a href="advertiser-reports.html">Reports</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">
+                    Welcome, Advertiser
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="page-header">
+                    <h1>Campaign Management</h1>
+                    <a href="#create-campaign-card" class="btn btn-primary">+ Create New Campaign</a>
+                </div>
+
+                <div class="card" id="create-campaign-card">
+                    <h2>Create New Campaign</h2>
+                    <form id="campaign-form">
+                        
+                        <div class="section-subtitle">1. Campaign Basic Info</div>
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="campaign-name">Ad Title / Campaign Name</label>
+                                <input type="text" id="campaign-name" placeholder="e.g. Summer Special Offer" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="campaign-type">Campaign Type</label>
+                                <select id="campaign-type" required>
+                                    <option value="banner">Banner Ads</option>
+                                    <option value="native">Native Ads</option>
+                                    <option value="video">Video Ads</option>
+                                    <option value="popunder">Popunder</option>
+                                    <option value="interstitial">Interstitial</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="section-subtitle">2. Advanced Targeting</div>
+                        <div class="grid-3">
+                            <div class="form-group">
+                                <label for="target-country">Country</label>
+                                <select id="target-country" multiple>
+                                    <option value="BD" selected>Bangladesh</option>
+                                    <option value="IN">India</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="ALL">All Countries</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-device">Device</label>
+                                <select id="target-device">
+                                    <option value="all">All Devices</option>
+                                    <option value="mobile">Mobile</option>
+                                    <option value="desktop">Desktop</option>
+                                    <option value="tablet">Tablet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-os">Operating System (OS)</label>
+                                <select id="target-os">
+                                    <option value="all">All OS</option>
+                                    <option value="android">Android</option>
+                                    <option value="ios">iOS</option>
+                                    <option value="windows">Windows</option>
+                                    <option value="mac">macOS</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-browser">Browser</label>
+                                <select id="target-browser">
+                                    <option value="all">All Browsers</option>
+                                    <option value="chrome">Chrome</option>
+                                    <option value="firefox">Firefox</option>
+                                    <option value="safari">Safari</option>
+                                    <option value="edge">Edge</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-language">Language</label>
+                                <select id="target-language">
+                                    <option value="all">All Languages</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-city">City / Region (Optional)</label>
+                                <input type="text" id="target-city" placeholder="e.g. Dhaka, Chittagong">
+                            </div>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="target-isp">ISP (Internet Service Provider)</label>
+                                <input type="text" id="target-isp" placeholder="e.g. Grameenphone, Banglalink, Wifi">
+                            </div>
+                        </div>
+
+                        <div class="section-subtitle">3. Pricing & Budget Schedule</div>
+                        <div class="grid-3">
+                            <div class="form-group">
+                                <label for="pricing-model">Pricing Model</label>
+                                <select id="pricing-model" required>
+                                    <option value="cpc">CPC (Cost Per Click)</option>
+                                    <option value="cpm">CPM (Cost Per Mille)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bid-rate">Bid Rate ($)</label>
+                                <input type="number" id="bid-rate" step="0.001" placeholder="e.g. 0.05" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="daily-budget">Daily Budget ($)</label>
+                                <input type="number" id="daily-budget" step="0.1" placeholder="e.g. 10.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="total-budget">Total Budget ($)</label>
+                                <input type="number" id="total-budget" step="0.1" placeholder="e.g. 100.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="start-date">Start Date</label>
+                                <input type="date" id="start-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">End Date</label>
+                                <input type="date" id="end-date" required>
+                            </div>
+                        </div>
+
+                        <div class="section-subtitle">4. Ad Creative & Landing Page</div>
+                        <div class="form-group">
+                            <label for="landing-url">Landing Page URL</label>
+                            <input type="url" id="landing-url" placeholder="https://yourwebsite.com/landing" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ad-description">Ad Description</label>
+                            <textarea id="ad-description" rows="2" placeholder="Short description about your ad..."></textarea>
+                        </div>
+
+                        <div id="image-upload-box" class="form-group upload-field active">
+                            <label for="upload-image">Upload Ad Banner Image</label>
+                            <input type="file" id="upload-image" accept="image/*">
+                        </div>
+
+                        <div id="video-upload-box" class="form-group upload-field">
+                            <label for="upload-video">Upload Video Ad File (MP4)</label>
+                            <input type="file" id="upload-video" accept="video/mp4">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Launch Campaign</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Your Campaigns</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Type</th>
+                                    <th>Model</th>
+                                    <th>Daily / Total Budget</th>
+                                    <th>Clicks / Impr.</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>E-Commerce Mega Sale</td>
+                                    <td>Banner</td>
+                                    <td>CPC ($0.05)</td>
+                                    <td>$10 / $100</td>
+                                    <td>1,240 / 45,000</td>
+                                    <td><span class="badge badge-active">Active</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;">Pause</button></td>
+                                </tr>
+                                <tr>
+                                    <td>App Download Video Ad</td>
+                                    <td>Video</td>
+                                    <td>CPM ($0.80)</td>
+                                    <td>$20 / $200</td>
+                                    <td>310 / 12,000</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;" disabled>Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Tech Blog Native Promo</td>
+                                    <td>Native</td>
+                                    <td>CPC ($0.03)</td>
+                                    <td>$5 / $50</td>
+                                    <td>2,100 / 90,000</td>
+                                    <td><span class="badge badge-paused">Paused</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 4px 8px; font-size: 12px;">Resume</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Casino Promo Direct Link</td>
+                                    <td>Popunder</td>
+                                    <td>CPM ($1.00)</td>
+                                    <td>$50 / $500</td>
+                                    <td>0 / 0</td>
+                                    <td><span class="badge badge-rejected">Rejected</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;">Reason</button></td>
+                                </tr>
+                                <tr>
+                                    <td>New Year Special Campaign</td>
+                                    <td>Banner</td>
+                                    <td>CPC ($0.04)</td>
+                                    <td>$15 / $150</td>
+                                    <td>3,750 / 120,000</td>
+                                    <td><span class="badge badge-completed">Completed</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px;">Report</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/campaign-management.js"></script>
+</body>
+  </html>
