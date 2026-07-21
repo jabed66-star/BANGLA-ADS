@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement System - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/announcements.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">Ads Bangla Admin</div>
+            <nav class="nav-menu">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="user-management.html">User Management</a>
+                <a href="website-approval.html">Website Approval</a>
+                <a href="campaign-approval.html">Campaign Approval</a>
+                <a href="payment-management.html">Payment Management</a>
+                <a href="earnings-management.html">Earnings Management</a>
+                <a href="announcement-system.html" class="active">Announcement System</a>
+                <a href="reports.html">Reports</a>
+                <a href="admin-settings.html">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <div class="user-profile">Welcome, Admin</div>
+            </header>
+
+            <div class="content-area">
+                <div class="page-header">
+                    <h1>Announcement & Notice System</h1>
+                </div>
+
+                <div class="announcement-grid">
+                    <div class="card">
+                        <h2>Create New Notice</h2>
+                        <form id="announcement-form">
+                            <div class="form-group">
+                                <label for="ann-title">Notice Title</label>
+                                <input type="text" id="ann-title" placeholder="e.g. System Maintenance Update" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ann-target">Target Audience</label>
+                                <select id="ann-target" required>
+                                    <option value="All Users">All Users</option>
+                                    <option value="Publishers Only">Publishers Only</option>
+                                    <option value="Advertisers Only">Advertisers Only</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ann-type">Notice Type</label>
+                                <select id="ann-type" required>
+                                    <option value="Info">General Info</option>
+                                    <option value="Update">Platform Update</option>
+                                    <option value="Warning">Warning</option>
+                                    <option value="Important">Important / Alert</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ann-message">Notice Message</label>
+                                <textarea id="ann-message" placeholder="আপনার বার্তাটি বিস্তারিত লিখুন..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Publish Announcement</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h2>Notice Publishing Tips</h2>
+                        <ul style="color: #475569; line-height: 1.8; font-size: 14px; padding-left: 20px;">
+                            <li><strong>All Users:</strong> সাধারণ নোটিশ বা সার্ভার মেইনটেন্যান্স সম্পর্কিত তথ্যের জন্য ব্যবহার করুন।</li>
+                            <li><strong>Publishers Only:</strong> পেমেন্ট আপডেট, পেআউট ডিলে বা নতুন এড ফরম্যাট সংক্রান্ত তথ্য পাঠাতে নির্বাচন করুন।</li>
+                            <li><strong>Advertisers Only:</strong> ডিপোজিট বোনাস বা নতুন ট্রাফিক সোর্স আপডেট দিতে এটি সিলেক্ট করুন।</li>
+                            <li>জরুরি সতর্কবার্তার ক্ষেত্রে টাইপ হিসেবে <strong>Important / Alert</strong> ব্যবহার করুন।</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Published Announcements History</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title & Message</th>
+                                    <th>Audience</th>
+                                    <th>Type</th>
+                                    <th>Date Published</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="announcement-tbody">
+                                <tr>
+                                    <td>
+                                        <strong>Scheduled System Maintenance</strong><br>
+                                        <small style="color:#64748b;">Server will be down for 30 minutes on Sunday midnight.</small>
+                                    </td>
+                                    <td><span class="badge badge-info">All Users</span></td>
+                                    <td><span class="badge badge-warning">Warning</span></td>
+                                    <td>2026-07-21</td>
+                                    <td>
+                                        <button class="btn-delete" onclick="deleteNotice(this)">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>bKash Payment Gateway Active</strong><br>
+                                        <small style="color:#64748b;">Instant bkash deposit option is now fully operational.</small>
+                                    </td>
+                                    <td><span class="badge badge-info">Advertisers Only</span></td>
+                                    <td><span class="badge badge-success">Update</span></td>
+                                    <td>2026-07-19</td>
+                                    <td>
+                                        <button class="btn-delete" onclick="deleteNotice(this)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets/js/announcements.js"></script>
+</body>
+</html>
